@@ -40,7 +40,7 @@ st.markdown(
     }
 
     header[data-testid="stHeader"]::before {
-        content: "🖼️➡️🔲 DEEP LEARNING CORROSION IMAGE SEGMENTATION (DL-CIS)";
+        content: "CORROSION IMAGE SEGMENTATION (DL-CIS)";
         display: block;
         text-align: center;
         font-size: 24px;
