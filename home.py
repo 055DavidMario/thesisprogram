@@ -179,6 +179,7 @@ def display_uploaded_image(uploaded_file):
     return
 
 # Fungsi untuk memuat model TensorFlow Keras
+@st.cache_resource
 def load_keras_model(model_path):
     """Fungsi untuk memuat model Keras dari path."""
     if not os.path.exists(model_path):
