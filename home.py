@@ -7,6 +7,7 @@ from PIL import Image
 from io import BytesIO
 import os
 import pandas as pd
+from custom_layers import MyCustomLayer
 
 # --- 1️⃣ Atur halaman agar full width ---
 # Mengatur halaman untuk menggunakan layout lebar penuh
@@ -377,7 +378,7 @@ def model():
     # Konten berdasarkan tab yang dipilih
     if st.session_state.tab1_selected:
         st.write("Mobile U-Net with Accuracy **97,48%** and mIoU **92.41%** tab is selected.")
-        mUnet = load_keras_model("./model/munet.keras")
+        mUnet = load_keras_model("./model/munet.keras", custom_objects={"MyCustomLayer": MyCustomLayer})
         st.text("Segmentation Process...")
         time.sleep(2)
 
@@ -401,7 +402,7 @@ def model():
     # Konten berdasarkan tab yang dipilih
     if st.session_state.tab2_selected:
         st.write("BiSeNetV3 with Accuracy **98.70%** and mIoU **96.12%** tab is selected.")
-        mUnet = load_keras_model("./model/bisenetv3.keras")
+        mUnet = load_keras_model("./model/bisenetv3.keras", custom_objects={"MyCustomLayer": MyCustomLayer})
         st.text("Segmentation Process...")
         time.sleep(2)
 
