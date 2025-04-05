@@ -40,7 +40,7 @@ st.markdown(
     }
 
     header[data-testid="stHeader"]::before {
-        content: "C-I-S";
+        content: "SEGMENTATION IMG";
         display: block;
         text-align: center;
         font-size: 24px;
