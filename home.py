@@ -40,7 +40,7 @@ st.markdown(
     }
 
     header[data-testid="stHeader"]::before {
-        content: "CORROSION IMAGE SEGMENTATION";
+        content: "C-I-S";
         display: block;
         text-align: center;
         font-size: 24px;
