@@ -54,8 +54,8 @@ Aplikasi ini mendukung dua model pretrained untuk segmentasi korosi:
 
 | Model           | Backbone         | Ukuran Input | Format    |
 |----------------|------------------|--------------|-----------|
-| Mobile U-Net   | EfficientNetB1   | 128, 256     | `.keras`  |
-| BiSeNetV3      | EfficientNetB1   | 128, 256     | `.keras`  |
+| Mobile U-Net   | EfficientNetB1   | 256, 256     | `.keras`  |
+| BiSeNetV3      | EfficientNetB1   | 256, 256     | `.keras`  |
 
 Model-model disimpan dalam folder `models/` dan dimuat sesuai pilihan user di aplikasi.
 
