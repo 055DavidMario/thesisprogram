@@ -1,4 +1,3 @@
-```markdown
 # 🔬 DL-CIS: Deep Learning-based Corrosion Image Segmentation App
 
 DL-CIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gambar korosi** menggunakan model deep learning. Aplikasi ini memungkinkan pengguna untuk memilih model, mengunggah gambar, melakukan segmentasi, serta mengevaluasi hasilnya dengan metrik seperti **IoU** dan **Dice Coefficient**.
