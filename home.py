@@ -69,9 +69,9 @@ st.markdown(
     }
 
     header[data-testid="stHeader"]::before {
-        content: "CORROSION IMAGE SEGMENTATION";
+        content: "🧠 CORRODED PIPE IMAGE SEGMENTATION";
         display: block;
-        font-size: 12px;
+        font-size: 36px
         font-weight: bold;
         color: var(--header-text);
         text-align: center;
@@ -81,9 +81,9 @@ st.markdown(
     }
 
     /* Responsive Header Font */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 480px) {
         header[data-testid="stHeader"]::before {
-            font-size: 16px;
+            font-size: 14px;
         }
 
         header[data-testid="stHeader"] {
@@ -142,7 +142,7 @@ st.markdown(
     }
 
     .st-emotion-cache-kgpedg::after {
-        content: "Deep Learning - Corrosion Image Segmentation";
+        content: "Deep Learning - Corroded Pipe Image Segmentation";
         margin-right: auto;
         line-height: 1.2;               /* Ini bikin jarak antar baris lebih rapat */
         white-space: normal;            /* Pastikan teks wrap alami, bukan satu baris */
@@ -160,7 +160,7 @@ st.markdown(
     }
 
     /* Responsive sidebar */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 480px) {
         .sidebar .sidebar-content {
             width: 100% !important;
         }
@@ -184,6 +184,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 # Fungsi Menu Segmentation
 ## Fungsi Tampilan Info Gambar
@@ -553,14 +554,14 @@ st.markdown("<div class='main-content'>", unsafe_allow_html=True)
 
 # Menu "About" - Menampilkan deskripsi proyek
 if menu == "About":
-    st.title("📖 Segmentation Project Information")
+    st.title("📖 CPIS Project Information")
     st.write("---")
     
     # Membuat container untuk deskripsi proyek
     with st.container():
         st.subheader("💡 Project Description")
         st.write("""
-        This project performs multi-class image segmentation to predict pipeline corrosion by comparing two deep learning model architectures, namely **Mobile U-Net + EfficientNetB1** and **BiSeNetV3 + EfficientNetB1**.
+        Deep Learning for Corroded Pipe Image Segmentation project performs multi-class image segmentation to predict pipeline corrosion by comparing two deep learning model architectures, namely **Mobile U-Net + EfficientNetB1** and **BiSeNetV3 + EfficientNetB1**.
         The segmentation is performed with special coloring: `red` for corrosion area, `blue` for pipe, and `green` for background, and displays the segmentation result along with the information of corrosion percentage on the pipe visually.
         """)
 
