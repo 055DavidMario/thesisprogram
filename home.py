@@ -10,7 +10,7 @@ import pandas as pd
 
 # --- 1️⃣ Atur halaman agar full width ---
 # Mengatur halaman untuk menggunakan layout lebar penuh
-st.set_page_config(page_title="DL-CIS", page_icon="🎨", layout="wide")
+st.set_page_config(page_title="CPIS", page_icon="🎨", layout="wide")
 
 # --- 2️⃣ Tambahkan Header dan Footer dengan CSS ---
 # Menambahkan style untuk header dan footer agar tetap di atas dan bawah dengan lebar penuh
