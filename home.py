@@ -17,67 +17,93 @@ st.set_page_config(page_title="DL-CIS", page_icon="🎨", layout="wide")
 st.markdown(
     """
     <style>
-    /* Mengatur tampilan agar responsif pada perangkat dengan layar lebih kecil dari 768px */
-    @media screen and (max-width: 768px) {
-        .sidebar .sidebar-content {
-            width: 100% !important;
+    /* ===================== Default (Light Mode) ===================== */
+    :root {
+        color-scheme: light;
+        --header-bg: #6D2323;
+        --header-text: white;
+        --body-bg: #FEF9E1;
+        --body-text: #000000;
+        --sidebar-bg: #FEF9E1;
+        --sidebar-border: #A31D1D;
+        --footer-bg: #6D2323;
+        --footer-text: white;
+    }
+
+    /* ===================== Dark Mode Override ===================== */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --header-bg: #1e1e1e;
+            --header-text: #ffffff;
+            --body-bg: #121212;
+            --body-text: #ffffff;
+            --sidebar-bg: #1c1c1c;
+            --sidebar-border: #444;
+            --footer-bg: #1e1e1e;
+            --footer-text: #ffffff;
         }
+    }
+
+    html, body, [data-testid="stAppViewContainer"], [data-testid="stMarkdownContainer"] {
+        background-color: var(--body-bg) !important;
+        color: var(--body-text) !important;
     }
 
     /* Header - Tetap di atas dan full width */
     header[data-testid="stHeader"] {
-        background-color: #6D2323 !important;
-        color: white !important;
+        background-color: var(--header-bg) !important;
+        color: var(--header-text) !important;
         text-align: center !important;
         font-size: 24px !important;
         font-weight: bold !important;
-        padding: 15px !important;
+        padding: 20px 10px !important;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     header[data-testid="stHeader"]::before {
-        content: "SEGMENTATION IMG";
+        content: "CORROSION IMAGE SEGMENTATION";
         display: block;
-        text-align: center;
-        font-size: 24px;
+        font-size: 12px;
         font-weight: bold;
-        color: white;
-    }
-
-    /* Footer - Tetap di bawah dan full width */
-    .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #6D2323;
-        color: white;
+        color: var(--header-text);
         text-align: center;
-        padding: 10px;
-        font-size: 14px;
-        z-index: 1000;
+        white-space: normal;
+        word-wrap: break-word;
+        padding: 4px;
     }
 
-    /* Body agar memiliki ruang yang cukup antara header dan footer */
+    /* Responsive Header Font */
+    @media screen and (max-width: 768px) {
+        header[data-testid="stHeader"]::before {
+            font-size: 16px;
+        }
+
+        header[data-testid="stHeader"] {
+            padding: 24px 12px !important;
+        }
+    }
+
+    /* Main body space */
     .main-content {
-        padding-top: 80px; /* Jarak dari header */
-        padding-bottom: 50px; /* Jarak dari footer */
+        padding-top: 80px;
+        padding-bottom: 50px;
     }
 
-    /* Menghapus padding pada .main-content untuk memastikan layout bersih */
     .main-content {
         padding-top: 0;
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
     }
-    
 
-    /* Menghapus padding pada .st-emotion-cache-1ibsh2c dalam media query untuk perangkat besar */
     @media (min-width: calc(54rem)) {
         .st-emotion-cache-1ibsh2c {
             padding-left: 10;
@@ -95,35 +121,63 @@ st.markdown(
     .st-emotion-cache-1yiq2ps {
         display: flex;
         flex-direction: row;
-        -webkit-box-pack: start;
         place-content: flex-start;
-        -webkit-box-align: stretch;
         align-items: stretch;
         position: absolute;
         inset: 0px;
         overflow: hidden;
-        background-color: #FEF9E1; // Warna background body
+        background-color: var(--body-bg) !important;
+        color: var(--body-text) !important;
     }
 
     .st-emotion-cache-kgpedg {
+        padding: 8px 16px 12px;
+        background-color: var(--header-bg);
+        color: var(--header-text);
         display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        -webkit-box-align: start;
-        align-items: start;
-        padding: calc(1.375rem) 1.5rem 1.5rem;
-        height: 8.3vh;
-        /* Menambahkan warna latar belakang */
-        background-color: #6D2323; /* Warna merah gelap */
+        align-items: center;
+        flex-direction: row-reverse;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .st-emotion-cache-kgpedg::after {
+        content: "Deep Learning - Corrosion Image Segmentation";
+        margin-right: auto;
+        line-height: 1.2;               /* Ini bikin jarak antar baris lebih rapat */
+        white-space: normal;            /* Pastikan teks wrap alami, bukan satu baris */
+        max-width: 80%;                 /* Biar ga terlalu panjang ke kanan */
     }
 
 
-    /* Sidebar maksimal 1/3 layer */
+    /* Sidebar */
     [data-testid="stSidebar"] {
         max-width: 270px !important;
-        background-color: #FEF9E1; // Warna background sidebar
+        background-color: var(--sidebar-bg) !important;
+        color: var(--body-text) !important;
         line-height: 3;
-        border-right: 6px solid #A31D1D; // Warna border sidebar
+        border-right: 6px solid var(--sidebar-border) !important;
+    }
+
+    /* Responsive sidebar */
+    @media screen and (max-width: 768px) {
+        .sidebar .sidebar-content {
+            width: 100% !important;
+        }
+    }
+
+    /* Footer */
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        z-index: 1000;
     }
     </style>
     <div class="footer">Made by David Mario Yohanes Samosir | UNDIKSHA | 2025</div>
