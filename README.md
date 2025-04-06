@@ -1,6 +1,6 @@
-# 🔬 DL-CPIS: Deep Learning-based Corroded Pipe Image Segmentation App
+# 🔬 CPIS: Deep Learning-based Corroded Pipe Image Segmentation App
 
-DL-CPIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gambar korosi** menggunakan model deep learning. Aplikasi ini memungkinkan pengguna untuk memilih model, mengunggah gambar, melakukan segmentasi, serta mengevaluasi hasilnya dengan metrik seperti **IoU** dan **Dice Coefficient**.
+CPIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gambar korosi** menggunakan model deep learning. Aplikasi ini memungkinkan pengguna untuk memilih model, mengunggah gambar, melakukan segmentasi, serta mengevaluasi hasilnya dengan metrik seperti **IoU** dan **Dice Coefficient**.
 
 <img src="preview.gif" width="700"/>
 
@@ -23,8 +23,8 @@ DL-CPIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gamb
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/DL-CPIS.git
-cd DL-CPIS
+git clone https://github.com/username/CPIS.git
+cd CPIS
 ```
 
 ### 2. Buat Virtual Environment (Opsional tapi disarankan)
@@ -98,7 +98,7 @@ Menampilkan penjelasan tentang tujuan dan langkah penggunaan aplikasi.
 ## 📁 Struktur Proyek
 
 ```
-DL-CPIS/
+CPIS/
 │
 ├── models/                 # Model terlatih (.keras)
 ├── data/                   # Contoh gambar dan ground truth
