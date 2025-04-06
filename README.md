@@ -1,9 +1,9 @@
-```markdown
-# 🔬 DL-CIS: Deep Learning-based Corrosion Image Segmentation App
+# 🔬 CPIS: Deep Learning-based Corroded Pipe Image Segmentation App
 
-DL-CIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gambar korosi** menggunakan model deep learning. Aplikasi ini memungkinkan pengguna untuk memilih model, mengunggah gambar, melakukan segmentasi, serta mengevaluasi hasilnya dengan metrik seperti **IoU** dan **Dice Coefficient**.
+CPIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gambar korosi** menggunakan model deep learning. Aplikasi ini memungkinkan pengguna untuk memilih model, mengunggah gambar, melakukan segmentasi, serta mengevaluasi hasilnya dengan metrik seperti **IoU** dan **Dice Coefficient**.
 
 <img src="preview.gif" width="700"/>
+<img src="preview2.gif" width="700"/>
 
 ---
 
@@ -24,8 +24,8 @@ DL-CIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gamba
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/dl-cis.git
-cd dl-cis
+git clone https://github.com/username/CPIS.git
+cd CPIS
 ```
 
 ### 2. Buat Virtual Environment (Opsional tapi disarankan)
@@ -55,8 +55,8 @@ Aplikasi ini mendukung dua model pretrained untuk segmentasi korosi:
 
 | Model           | Backbone         | Ukuran Input | Format    |
 |----------------|------------------|--------------|-----------|
-| Mobile U-Net   | EfficientNetB1   | 128, 256     | `.keras`  |
-| BiSeNetV3      | EfficientNetB1   | 128, 256     | `.keras`  |
+| Mobile U-Net   | EfficientNetB1   | 256, 256     | `.keras`  |
+| BiSeNetV3      | EfficientNetB1   | 256, 256     | `.keras`  |
 
 Model-model disimpan dalam folder `models/` dan dimuat sesuai pilihan user di aplikasi.
 
@@ -99,7 +99,7 @@ Menampilkan penjelasan tentang tujuan dan langkah penggunaan aplikasi.
 ## 📁 Struktur Proyek
 
 ```
-dl-cis/
+CPIS/
 │
 ├── models/                 # Model terlatih (.keras)
 ├── data/                   # Contoh gambar dan ground truth
