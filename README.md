@@ -2,6 +2,8 @@
 
 CPIS adalah aplikasi berbasis **Streamlit** untuk melakukan **segmentasi gambar korosi** menggunakan model deep learning. Aplikasi ini memungkinkan pengguna untuk memilih model, mengunggah gambar, melakukan segmentasi, serta mengevaluasi hasilnya dengan metrik seperti **IoU** dan **Dice Coefficient**.
 
+🌐 **Coba Aplikasinya di Sini**: [https://dmys-msis-cp.streamlit.app/](https://dmys-msis-cp.streamlit.app/)
+
 <img src="preview.gif" width="700"/>
 <img src="preview2.gif" width="700"/>
 
